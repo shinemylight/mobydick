@@ -1,0 +1,1 @@
+$.fn.extend({formify:function(t,n){var a=$(this).attr("action");$(this).attr("action","javascript:void(null);"),$(this).submit(function(){var i=[];$(this).find("input").each(function(t,n){i.push({name:$(n).attr("name"),value:$(n).val()})}),$.ajax({type:"POST",url:a,data:i,success:function(n){t(n)},error:function(t){n(t)}})})}});
